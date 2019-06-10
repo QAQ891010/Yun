@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    >
+
+    <FrameLayout
+        android:id="@+id/Fl_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tab_menu">
+    </FrameLayout>
+
+    <!--<include layout="@layout/bottom_ui"></include>-->
+
+    <LinearLayout android:id="@+id/tab_menu"
+        android:background="@drawable/title"
+        android:gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+        <TextView
+            android:id="@+id/txt_deal"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+
+            android:drawableTop="@drawable/report"
+            android:gravity="center"
+            android:textColor="#000"
+            android:text="资讯"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/txt_poi"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/menu"
+            android:drawablePadding="3dp"
+            android:gravity="center"
+            android:text="服务"
+            android:textColor="#000"/>
+
+        <TextView
+            android:id="@+id/txt_user"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/user"
+            android:gravity="center"
+            android:text="我的"
+            android:textColor="#000"/>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
