@@ -1,14 +1,20 @@
 package com.example.yun.Fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.yun.R;
+import com.example.yun.RequestService;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -33,6 +39,8 @@ public class User extends Fragment {
     public User() {
         // Required empty public constructor
     }
+
+    private TextView request,upload;
 
     /**
      * Use this factory method to create a new instance of
@@ -59,6 +67,8 @@ public class User extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
     }
 
     @Override
@@ -66,6 +76,33 @@ public class User extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_user, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        //点击请求服务时响应
+        request = view.findViewById(R.id.tv_request_service);
+        request.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), RequestService.class);
+                startActivity(intent);
+
+            }
+        });
+
+        //点击上传病历时响应
+        upload = view.findViewById(R.id.tv_upload);
+        upload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(),"暂未开放", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event

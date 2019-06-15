@@ -5,10 +5,37 @@
     android:layout_height="match_parent"
     tools:context=".Fragment.User">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="这是用户界面" />
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_request_service"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="请求服务"
+            android:textSize="24dp"
+            android:layout_margin="10dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/title"
+            />
+
+        <TextView
+            android:id="@+id/tv_upload"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_request_service"
+            android:text="上传病历"
+            android:textSize="24dp"
+            android:layout_margin="10dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/title"
+
+            />
+
+
+
+    </RelativeLayout>
+
 
 </FrameLayout>
